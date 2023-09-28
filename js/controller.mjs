@@ -12,6 +12,18 @@ window.addEventListener("keydown", (e) => {
   }
 })
 
+window.addEventListener("touch", (e) => {
+  if (!localStorage.getItem("player")) return;
+  if (e.code === "Space") {
+    e.preventDefault();
+    if (modelGame.playing) {
+      modelBird.dy = - modelGame.gravity * modelBird.jumpConst;
+    } else {
+      reset();
+    }
+  }
+})
+
 function reset() {
   if (!modelGame.playing) {
     modelBird.posY = modelBird.startPosY;
