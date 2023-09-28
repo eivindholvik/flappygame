@@ -14,13 +14,11 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("touchstart", (e) => {
   if (!localStorage.getItem("player")) return;
-  if (e.code === "Space") {
-    e.preventDefault();
-    if (modelGame.playing) {
-      modelBird.dy = - modelGame.gravity * modelBird.jumpConst;
-    } else {
-      reset();
-    }
+  e.preventDefault();
+  if (modelGame.playing) {
+    modelBird.dy = - modelGame.gravity * modelBird.jumpConst;
+  } else {
+    reset();
   }
 })
 
