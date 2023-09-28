@@ -12,7 +12,7 @@ window.addEventListener("keydown", (e) => {
   }
 })
 
-window.addEventListener("touch", (e) => {
+window.addEventListener("touchstart", (e) => {
   if (!localStorage.getItem("player")) return;
   if (e.code === "Space") {
     e.preventDefault();
