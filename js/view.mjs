@@ -151,10 +151,10 @@ async function gameOver() {
 }
 
 function render() {
-  if (modelBird.alive && modelGame.playing) {
-    updateStates();
-  }
-  checkColitions();
+  // if (modelBird.alive && modelGame.playing) {
+  //   updateStates();
+  // }
+  // checkColitions();
   ctx.clearRect(0, 0, ...canvasSize);
   drawBackground();
   drawEnemy();
@@ -165,6 +165,17 @@ function render() {
     drawGameOver();
   }
 }
+
+function gameLoop() {
+  if (modelBird.alive && modelGame.playing) {
+    updateStates();
+  }
+  checkColitions();
+}
+
+setInterval(() => {
+  gameLoop();
+}, 1000 / 100);
 
 
 
